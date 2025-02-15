@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signorita</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- First Page: Tap to Open -->
+    <div id="letterContainer">
+        <button class="tapButton" onclick="openLetter()">💌 Dosy Hna Ya Signorita❤️ 💌</button>
+    </div>
+
+    <!-- Second Page: Tap to Continue -->
+    <div id="secondPage" style="display: none;">
+        <button class="tapButton" onclick="goToSurprise()">💌 Mra Kman M3l4 Hnt3bk M3ana dosy Tany 😂❤️ 💌</button>
+    </div>
+
+    <!-- Third Page: Surprise Box -->
+    <div id="surpriseBox" style="display: none;">
+        <!-- Left Side: Image -->
+        <div class="leftSide">
+            <img src="her-image.jpg" alt="Surprise Image" class="photo">
+        </div>
+
+        <!-- Right Side: Message with Butterfly & Flower -->
+        <div class="rightSide">
+            <div id="messageCard">
+                <img src="butterfly.png" class="decor" id="butterfly">
+                <h2>🌸 A7la Signorita Ya 3am 🌸</h2>
+                <p>Aw3y Tfhmy 8lt bs Haaaa ana 3arfk 8a4eema 😂</p>
+                <br>
+                <p>2olt A3mlk Kda 7aga Ray2a bma an Dy El 7aga el Wa7eda ely b3rf A3mlha Ya3ny 😂🤷</p>
+                <br>
+                <p>Atamana Ykon 3gbk Ya Signorita❤️</p>
+                <br>
+                <h3>💖 Dodo 💖</h3>
+                <img src="flower.png" class="decor" id="flower">
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="Music.mp3" type="audio/mp3">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

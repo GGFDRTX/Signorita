@@ -1,0 +1,166 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body Styling - Allow Full Page Scroll */
+body {
+    width: 100%;
+    min-height: 100vh; /* Allows scrolling */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: #ffdde1;
+    overflow-x: hidden;
+}
+
+/* First Page - Tap to Open (Envelope Button) */
+#letterContainer {
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #ff758c, #ff7eb3);
+}
+
+/* Envelope Button */
+.tapButton {
+    position: relative;
+    width: 250px; /* Increased */
+    height: 180px; /* Increased */
+    background: #fff;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #d6336c;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* Envelope Top Flap */
+.tapButton::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: #fff;
+    border-radius: 20px 20px 0 0;
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0.6;
+}
+
+/* Hover Effect - Opens the Envelope */
+.tapButton:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.tapButton:hover::before {
+    transform: translateY(-20px);
+    opacity: 0;
+}
+
+/* Second Page - Tap to Continue */
+#secondPage {
+    display: none;
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #ff758c, #ff7eb3);
+}
+
+/* Third Page - Surprise Box */
+#surpriseBox {
+    display: none;
+    width: 100%;
+    min-height: 100vh; /* Allows scrolling */
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px 0; /* Added space */
+}
+
+/* Left Side - Image Section */
+.leftSide {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px; /* Adds spacing */
+}
+
+/* Photo - Increased Size */
+.photo {
+    width: 90%; /* Increased from 100% */
+    max-height: 350px; /* Increased */
+    object-fit: contain; /* Ensures full image visibility */
+}
+
+/* Right Side - Message Section */
+.rightSide {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Message Card */
+#messageCard {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff4081;
+    text-align: center;
+    max-width: 90%;
+    margin: auto;
+}
+
+/* Decorations */
+.decor {
+    width: 50px;
+    height: auto;
+}
+
+/* Mobile-Friendly Adjustments */
+@media screen and (max-width: 768px) {
+    .photo {
+        max-height: 300px; /* Slightly increased */
+    }
+
+    #messageCard {
+        font-size: 18px;
+        max-width: 95%;
+    }
+
+    .decor {
+        width: 40px;
+    }
+
+    /* Adjusted envelope size for mobile */
+    .tapButton {
+        width: 220px;
+        height: 160px;
+        font-size: 18px;
+    }
+}
